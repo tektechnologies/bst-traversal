@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <script>
+         class Node {
+            constructor(value) {
+               this.key = value;
+               this.left = null;
+               this.right = null;
+            }
+         }
+         var root = null;
+         function TreeInorder(node) {
+            if (node == null)
+            return;
+          
+            TreeInorder(node.left);
+            document.write(node.key + "→");
+            TreeInorder(node.right);
+            
+         }
+         root = new Node('A');
+         root.left = new Node('B');
+         root.right = new Node('C');
+         root.right.left = new Node('D');
+         root.right.right = new Node('E');
+         root.right.right.left = new Node('F');
+         root.right.right.right = new Node('G');
+         document.write("<br/>Inorder traversal of the tree is<br/>");
+         TreeInorder(root);
+      </script>
+   </head>
+</html>
